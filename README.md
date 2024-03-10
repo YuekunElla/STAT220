@@ -8,6 +8,6 @@
       * Meme creation in RStudio
       * HTML Creation
 
-If you want to learn me more, you can also check out my [Linkedin profile page](www.linkedin.com/in/yuekun-yao-6051a7293).
+If you want to learn me more, you can also check out my [Linkedin profile page](https://www.linkedin.com/in/yuekun-yao-6051a7293).
 
 
