@@ -1,4 +1,4 @@
-# STAT220:Data Technologies
+# STAT220: Data Technologies
 *I will use this for demonstrating and storing STATS 220 related projects.*
 
 ## Contents of projects
