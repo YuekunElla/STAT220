@@ -1,0 +1,128 @@
+---
+title: "Project 2"
+subtitle: "STATS 220 Semester One 2024"
+author: "Yuekun Yao"
+date: "2024-03-23"
+output:
+  html_document:
+    code_folding: hide
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, message=FALSE, warning=FALSE, error=FALSE)
+library(magick)
+library(tidyverse)
+```
+
+```{css, echo=FALSE}
+body{
+  background-color:rgb(117 190 218 / 20%);
+  font-family: serif;
+}
+
+h1, h2, h3, h4 {
+  font-weight: bold;
+}
+
+p {
+  font-family: cursive;
+  font-size: 18px;
+}
+```
+
+
+## Introduction
+1. For this report, the focus is on tracking physical exercise behavior. Understanding individuals' exercise routines and behaviors is crucial for optimizing performance and promoting overall well-being. By tracking aspects such as exercise frequency, intensity, affecting factors and motivation, we aim to gain insights into how individuals engage with their physical exercise over time.
+
+2. One of the guidelines for designing forms is to use validation rules for responses.For example, in Question 4: "How many days did you exercise this week?", I applied a validation rule to ensure that respondents enter a number between 0 and 7, representing the valid range of days in a week. This validation rule prevents respondents from submitting invalid or nonsensical responses, such as negative numbers or numbers exceeding the maximum number of days in a week. By enforcing this constraint, we ensure that the collected data accurately reflects respondents' exercise frequency without introducing errors or inconsistencies.
+
+3. One specific question that allows us to analyze changes in human behavior over different weeks is Question 4: "How many days did you exercise this week?" By collecting numerical data on exercise frequency each week, we can track fluctuations in the number of exercise days over time. This enables us to observe trends such as increases or decreases in exercise consistency, which may indicate changes in motivation, commitment, or external factors influencing exercise behavior.
+
+4. [link_to_my_Google_forms](https://forms.gle/BMC9scE9HjkCp8qy7)
+
+![](https://buzzrx.s3.amazonaws.com/d1c6326d-04b2-48f9-95df-9e5d2b492bfe/WhyDoExerciseNeedsVaryBetweenIndividuals.png)
+
+## Analytics
+1. Most of people prefer to choosing running to exercise.
+
+2. The Gym is the most popular among the respondents.
+
+3. Road is the more popular exercise location among the male than the female.
+```{r, eval=TRUE}
+# Reading data from published CSV file into a data frame called learning_data
+csv_file <- "https://docs.google.com/spreadsheets/d/e/2PACX-1vSmUDWsAXTLGBXuf6gxC8vctyKPe9Vr-Qk4sdyNd4bQILq7X69iFs_FwW-M3-dlpYbZ_7-2hV_es6OZ/pub?gid=1145940176&single=true&output=csv"
+
+# Renaming variables of the data frame learning_data
+learning_data <- read_csv(csv_file) %>%
+  rename(age = 2,
+         sex = 3,
+         if_exercise = 4,
+         exercise_type = 5,
+         exercise_days = 6,
+         exercise_hours = 7,
+         intensity_level = 8,
+         affecting_factors = 9,
+         exercise_loaction = 10,
+         main_reason =11
+         ) 
+
+# Summary values based on the data
+avg_exercise_days <- mean(learning_data$exercise_days, na.rm = TRUE)
+avg_exercise_hours <- mean(learning_data$exercise_hours, na.rm = TRUE)
+
+average_exercise_duration <- paste("The average training days per week of respondents are", 
+                        round(avg_exercise_days, 1),
+                        "days,",
+                        "and average training hours on the exercise day are",
+                        round(avg_exercise_hours, 1),
+                        "hours.") %>% print()
+
+minimum_total_exercise_hours = min(learning_data$exercise_hours*learning_data$exercise_days, na.rm = TRUE)
+maximum_total_exercise_hours = max(learning_data$exercise_hours*learning_data$exercise_days, na.rm = TRUE)
+
+extremum_of_total_exercise_hours <- paste("The minimum total exercise hours of respondents who exercise per week are",
+                                          minimum_total_exercise_hours,
+                                          "hours,",
+                                          "and the maximum total exercise hours of respondents per week are",
+                                          maximum_total_exercise_hours,
+                                          "hours.") %>% print()
+
+# Bar chart for types of physical exercise
+cleaned_data <- na.omit(learning_data)
+
+cleaned_data %>%
+  ggplot() +
+  geom_bar(aes(x = exercise_type),fill = "skyblue" )+
+  labs(title = "Types of physical exercise",
+       caption = "Source: My Physical Exercise Behaviors Survey",
+       x = "Exercise type",
+       y = "Number of people")
+
+# Bar chart for the popularity of different location
+learning_data_longer <- na.omit(learning_data) %>%
+  separate_rows(exercise_loaction, sep = ", ")
+
+learning_data_longer %>%
+  ggplot() +
+  geom_bar(aes(x = exercise_loaction, fill = sex)) +
+  labs(title = "The popularity of different location",
+       caption = "Source: My Physical Exercise Behaviors Survey",
+       x = "Exercise location",
+       y = "Number of choices") 
+
+```
+
+## Creativity
+1. In my Google forms, I added some pictures and emoji to make respondents have a good experience. And the section two only appear when people choose "Yes" in Question 3.
+
+2. When making the bar graph of the popularity of different location, I combine the sex and exercise location which shows road is the more popular exercise location among the male than the female., and use na.omit(learning_data) to delete the NA bar.
+
+
+## Learning reflection
+From the Module 2:Creating web-based dynamic reporting systems, I learned how to make a good Google forms with different type questions, which conforms to Data governance and privacy, how to transform the data from Google form to Google sheet to CSV to R, how to make a tidy form using {tidyverse}, how to use the {tidyverse} to get the mean, maximum, minimum, length of the data, how to rename the variables of the data frame and how to produce graphics using packages from the {tidyverse}.
+
+In the future, I want to learn more about how to analyse the data using some packages on the R.
+
+
+
+
