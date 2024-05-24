@@ -1,0 +1,114 @@
+---
+title: "Project3"
+subtitle: "STATS 220 Semester One 2024"
+author: "Yuekun Yao"
+date: "2024-04-24"
+output:
+  html_document:
+    code_folding: hide
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, message=FALSE, warning=FALSE, error=FALSE)
+library(magick)
+library(tidyverse)
+library(jsonlite)
+photo_data <- read_csv("selected_photos.csv")
+options(scipen = 999)
+```
+
+```{css, echo=FALSE}
+body{
+  background-color:rgb(117 190 218 / 20%);
+  font-family: serif;
+}
+
+h1, h2, h3, h4 {
+  font-weight: bold;
+}
+
+p {
+  font-family: cursive;
+  font-size: 12pt;
+}
+
+img {
+   max-width: 50%;
+}
+```
+
+## Introduction
+* I chose starry sky as my two search words in the website of pixabay, which are the pictures I love to watching and are beautiful.
+
+* ![](top_photos.png)
+
+* 1. **photo1 features**: The tags are `Astronomy`, `Night sky`, `Cosmos image`. There are 94,488 views, 78,253 downloads and 199 likes. The photo was shot by Camera Nikon D750.
+  2. **photo2 features**: The tags are `Heaven`, `Stars`, `Fog image`. There are 29,053 views,19,016 downloads and 134 likes. The photo was shot by Camera Fujifilm X-T2.
+  3. **photo3 features**: The tags are `Lake`, `Water`, `Stars image`. There are 27,212 views,18,650 downloads and 123 likes. The photo was shot by Camera Fujifilm X-T2.
+  
+* *The page URL of selected photos*
+```{r}
+photo_data %>%
+  select(pageURL) %>%
+  knitr::kable()
+```
+
+* ![](my_photos.gif)
+              
+       
+## Key features of selected photos
+* The average downloads of selected photos is `r round(mean(photo_data$downloads),2)`.
+* The median downloads of selected photos is `r median(photo_data$downloads)`.
+* The sum of comments of selected photos is `r sum(photo_data$comments)`.
+* The average number of views per photo is `r round(mean(photo_data$views), 2)`. 
+* There are 4 photos which was gotten more a million of downloads among selected `r nrow(photo_data)` photos.
+
+```{r}
+#Calculate the amount of photos which is more million downloads among the selected photos.
+amount_more_million_downloads <- photo_data %>%
+  group_by(more_million_downloads) %>%
+  summarise(amount = n())
+amount_more_million_downloads
+```
+
+## Creativity
+Create a plot of the ratio of downloads to views for each user by using `group_by()` and `summarise()` function and using the summary value into `ggplot()` and `geom_point()` function.
+```{r}
+#Calculate the ratio of between downloads and views for each users 
+user_download_ratio <- photo_data %>%
+  group_by(user_id) %>%
+  summarise(downloads_ratio = sum(downloads)/sum(views))
+
+#Create a plot of the ratio of downloads to views for each user
+user_download_ratio_plot <- user_download_ratio %>%
+  ggplot() +
+  geom_point(aes(x=user_id, y = downloads_ratio)) +
+  labs(
+    title = "The downloads ratio of users",
+    subtitle = "The ratio of downloads to views for each user",
+    caption = "Source: Pixabay",
+    x = "User ID",
+    y = "Downloads Ratio"
+  )
+options(scipen = 999)
+user_download_ratio_plot
+```
+
+## Learning reflection
+From the Module 3:Creating new variables and data tables, I learned to identify key features of JSON, how to write simple queries using SQL, how to manipulate data frames using {dplyr}, how to source data from an API, how to report on key features of data, how to use {dplyr} to produce summaries, how to  using R & RMarkdown for reproducible reporting including `drop_na()`, `na.omit()`, `inline R code` & `knitr::kable()`. And there are some important functions I learned in module 3, such as `fromJSON()`,`mutate()`,`select()`,`group_by()`,`summarise()`,`geom_point()`.
+
+In the future, I want to learn more about how to analyse the data using some packages on the R.
+
+## Appendix
+```{r file='exploration.R', eval=FALSE, echo=TRUE}
+
+```
+
+
+
+
+
+
+
+
+
