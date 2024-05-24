@@ -1,0 +1,103 @@
+---
+title: "Project5"
+subtitle: "Creating data from digital sources"
+author: "Yuekun Yao"
+date: "2024-05-21"
+output:
+  html_document:
+    code_folding: hide
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, message=FALSE, warning=FALSE, error=FALSE)
+library(tidyverse)
+library(rvest)
+library(magick)
+```
+
+```{css, echo=FALSE}
+body{
+  background-color:rgb(117 190 218 / 20%);
+  font-family: serif;
+}
+
+h1, h2, h3, h4 {
+  font-weight: bold;
+}
+
+p {
+  font-family: cursive;
+  font-size: 12pt;
+}
+
+img {
+   max-width: 50%;
+}
+
+```
+
+## Part A
+I explored the difference and similarity of popular movies in theaters and streaming, and I will pay attention to movies title, movies year, movies critics consensus, movies director, and movies synopsis. 
+
+I chose to explore the data context, since I want to find some similarities or creative elements in some good popular movies.
+
+```{r file='partA.R'}
+
+```
+
+## Part B
+```{r file='partB.R', results='hide'}
+
+```
+The analysis of the text features of the releases published by Hon David Seymour reveals the following:
+
+  * The average title length is approximately `r mean_num_words_title` words.
+  
+  * The average word count per release is around `r mean_num_words_for_releases` words.
+  
+  * Each sentence in a release averages around `r mean_word_count_per_sentence` words.
+  
+  * The 15 most common words in release titles, sorted by frequency, are: `r     common_words$title_word`.
+
+## Part C
+```{r file='partC.R'}
+
+```
+
+The visualization illustrates the annual frequency of speeches on education, immigration, and data topics, showcasing trends and variations over time.
+
+
+## Learning reflection
+From the Module 5: Creating data from digital sources, I learned to how to use web scraping to source data,  write SQL queries to join tables, combine data from different tables, develop strategies to combine data from different sources, manipulate data involving dates and times, and analyse text data using {stringr} and {dplyr}.I learned the significance of web scraping in sourcing data from digital platforms. Through this technique, I discovered the power of automating data collection from various online sources, enabling access to a wide array of valuable information for analysis and decision-making.
+
+Moving forward, I'm particularly curious about delving deeper into the realm of data integration and manipulation. Exploring advanced techniques for combining data from disparate sources, such as APIs or databases, intrigues me. 
+
+## Self review
+
+Reflecting on the completion of the five projects, I have undoubtedly honed my skills in data analysis and visualization through the utilization of various R packages such as {magick}, {tidyverse}, and {ggplot2}. By engaging with these tools, I've developed proficiency in generating static and dynamic visualizations, which not only enhance data interpretation but also facilitate effective communication of insights. Moreover, I've acquired the ability to manipulate and create new variables and data tables, enabling me to structure and organize data in a manner conducive to analysis. These skills align closely with the course learning outcomes for STATS 220, particularly in terms of mastering techniques for data manipulation, visualization, and analysis using statistical software like R.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
