@@ -62,6 +62,16 @@
 
       * Creating a project report
 
+5. **Project 5:**
+   
+      * Part A: Scraping data from the web
+
+      * Part B: Analysing features of the text used in government minister releases
+
+      * Part C: Creating a visualisation by scraping and joining data
+
+      * Creating a project report
+
 If you want to learn me more, you can also check out my [Linkedin profile page](https://www.linkedin.com/in/yuekun-yao-6051a7293).😊
 
 
