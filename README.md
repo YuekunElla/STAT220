@@ -30,8 +30,27 @@
           3.  Produce text that contains summary values using R code and `the paste()` function 
           4.  Produce different and informative bar charts using {ggplot} functions
 
-      * RMarkdown report setup and introduction
-        
+      * Creating project report
+
+4. **Project 4:**
+   
+      * Isualising data about videos from the YouTube channels @aliazaita and @LaniPliopa
+
+      * Data collection 📮
+          1.  Generate a link to share the Google form with others
+          2.  Link Google form to a new Google sheet 🔗
+          3.  Publish Google sheet as a CSV and record this URL 
+             
+      * Data exploration 🔎
+          1.  Top 10 Common Words in titles by two channels
+          2.  Average views at different times of day of two channels
+          3.  How long is typical vedio durations of two channels?
+          4.  What is the duration of a highly viewd video?
+             
+      * Creating a Dynamic data story 📊
+
+      * Creating project report
+
 If you want to learn me more, you can also check out my [Linkedin profile page](https://www.linkedin.com/in/yuekun-yao-6051a7293).😊
 
 
