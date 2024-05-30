@@ -35,7 +35,7 @@
       * Isualising data about photos from the search words of starry sky in the website of Pixabay
         
       * Data collection 📮
-          1. Using the Pixabay API explorer app to get the data of photos from the search words of starry sky
+          1. Using the Pixabay API explorer app to get the data about photos from the search words of starry sky
    
       * Data exploration 🔎
           1.  The average downloads of selected photos
@@ -50,15 +50,13 @@
       * Isualising data about videos from the YouTube channels @aliazaita and @LaniPliopa
 
       * Data collection 📮
-          1.  Generate a link to share the Google form with others
-          2.  Link Google form to a new Google sheet 🔗
-          3.  Publish Google sheet as a CSV and record this URL 
-             
+          *  Using the YouTube API to get data about YouTube videos
+              
       * Data exploration 🔎
-          1.  Top 10 Common Words in titles by two channels
-          2.  Average views at different times of day of two channels
-          3.  How long is typical vedio durations of two channels?
-          4.  What is the duration of a highly viewd video?
+          *  Top 10 Common Words in titles by two channels
+          *  Average views at different times of day of two channels
+          *  How long is typical vedio durations of two channels?
+          *  What is the duration of a highly viewd video?
              
       * Creating a Dynamic data story 📊
 
