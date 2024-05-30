@@ -33,7 +33,10 @@
 3. **Project 3:**
    
       * Isualising data about photos from the search words of starry sky in the website of Pixabay
-             
+        
+      * Data collection 📮
+          1. Using the Pixabay API explorer app to get the data of photos from the search words of starry sky
+   
       * Data exploration 🔎
           1.  The average downloads of selected photos
           2.  The median downloads of selected photos
@@ -42,7 +45,7 @@
             
       * Creating a project report
 
-4. **Project 4:**
+5. **Project 4:**
    
       * Isualising data about videos from the YouTube channels @aliazaita and @LaniPliopa
 
