@@ -6,27 +6,27 @@
 1. **Project 1:**
 
       * Making a meme image and a meme animation 😺 in RStudio 
-         1.  Using some functions e.g. `c()`, `image_blank()`, `image_read()`, `image_annotate()`, 
+         *  Using some functions e.g. `c()`, `image_blank()`, `image_read()`, `image_annotate()`, 
             `image_append()`, `image_animate()`, `image_flop()`, `image_write()`, `image_rotate()`.
 
-      * HTML Creation
+      * Creating a project report
 
 2. **Project 2:**
    
       * Form design 📋
-         1.  The data context for Project 2 is tracking human behaviour 🏄🏻‍♀️ ⛹🏼 🏌🏻‍♀️ 🚴🏻‍♀️ 🧗🏼‍♂️
-         2.  Develop a new Google form and create different kinds of questions and add text, visual, and structural elements as needed
+         *  The data context for Project 2 is tracking human behaviour 🏄🏻‍♀️ ⛹🏼 🏌🏻‍♀️ 🚴🏻‍♀️ 🧗🏼‍♂️
+         *  Develop a new Google form and create different kinds of questions and add text, visual, and structural elements as needed
 
       * Data collection 📮
-          1.  Generate a link to share the Google form with others
-          2.  Link Google form to a new Google sheet 🔗
-          3.  Publish Google sheet as a CSV and record this URL 
+          *  Generate a link to share the Google form with others
+          *  Link Google form to a new Google sheet 🔗
+          * Publish Google sheet as a CSV and record this URL 
              
       * Data exploration 🔎
-          1.  Use the function `read_csv()` to read data directly from the URL of published CSV file into a data frame called `learning_data`.
-          2.  Rename the variables of the data frame `learning_data` using the `rename()` function
-          3.  Produce text that contains summary values using R code and `the paste()` function 
-          4.  Produce different and informative bar charts using {ggplot} functions
+          *  Use the function `read_csv()` to read data directly from the URL of published CSV file into a data frame called `learning_data`.
+          *  Rename the variables of the data frame `learning_data` using the `rename()` function
+          *  Produce text that contains summary values using R code and `the paste()` function 
+          *  Produce different and informative bar charts using {ggplot} functions
 
       * Creating a project report
         
@@ -35,17 +35,17 @@
       * Isualising data about photos from the search words of starry sky in the website of Pixabay
         
       * Data collection 📮
-          1. Using the Pixabay API explorer app to get the data about photos from the search words of starry sky
+          * Using the Pixabay API explorer app to get the data about photos from the search words of starry sky
    
       * Data exploration 🔎
-          1.  The average downloads of selected photos
-          2.  The median downloads of selected photos
-          3.  The amount of photos which was gotten more a million of downloads
-          4.  The dowloads ratio per photo
+          *  The average downloads of selected photos
+          *  The median downloads of selected photos
+          *  The amount of photos which was gotten more a million of downloads
+          *  The dowloads ratio per photo
             
       * Creating a project report
 
-5. **Project 4:**
+4. **Project 4:**
    
       * Isualising data about videos from the YouTube channels @aliazaita and @LaniPliopa
 
