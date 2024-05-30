@@ -20,13 +20,13 @@
       * Data collection 📮
           *  Generate a link to share the Google form with others
           *  Link Google form to a new Google sheet 🔗
-          * Publish Google sheet as a CSV and record this URL 
+          *  Publish Google sheet as a CSV and record this URL 
              
       * Data exploration 🔎
-          *  Use the function `read_csv()` to read data directly from the URL of published CSV file into a data frame called `learning_data`.
-          *  Rename the variables of the data frame `learning_data` using the `rename()` function
-          *  Produce text that contains summary values using R code and `the paste()` function 
-          *  Produce different and informative bar charts using {ggplot} functions
+          *  The average training days per week of respondents
+          *  The average training hours on the exercise day
+          *  The distribution of the people amount for each physical exercise
+          *  The poularity of different exercise location in different sex
 
       * Creating a project report
         
@@ -41,7 +41,7 @@
           *  The average downloads of selected photos
           *  The median downloads of selected photos
           *  The amount of photos which was gotten more a million of downloads
-          *  The dowloads ratio per photo
+          *  The distribution of dowloads ratio per creator
             
       * Creating a project report
 
